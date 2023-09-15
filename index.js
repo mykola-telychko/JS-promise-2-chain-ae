@@ -1,7 +1,7 @@
-function fetchData() {
+function getAsyncPromiseData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve('Promise data fetched');
+      resolve('promise data fetched');
     }, 1000);
   });
 }
@@ -9,7 +9,7 @@ function fetchData() {
 function processAndTransformData(data) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const transformedData = data.toUpperCase();
+      const transformedData = data.toUpperCase().replaceAll(' ', '-');
       resolve(transformedData);
     }, 2000);
   });
@@ -24,9 +24,9 @@ function saveDataToDatabase(data) {
   });
 }
 
-fetchData()
+getAsyncPromiseData()
   .then((data) => {
-    console.log('Data received:', data);
+    console.log('thenOUTPUT : ', data);
 
     // Обробка та трансформація даних
     return processAndTransformData(data);
