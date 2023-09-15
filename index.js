@@ -19,8 +19,8 @@ function saveDataToDatabase(data) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       // Симулюємо збереження даних до бази даних
-      resolve('Data saved to the database');
-    }, 1500);
+      resolve('Saved to the database');
+    }, 2500);
   });
 }
 
